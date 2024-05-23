@@ -51,12 +51,12 @@ function update() {
     // Check for collision with apple
     if (head.x === apple.x && head.y === apple.y) {
         // Eat apple
-        snake.push({});
+        snake.push({x: head.x, y: head.y});
         score++;
         scoreDisplay.textContent = `Score: ${score}`;
 
         // Generate new apple location
-        apple.x = Math.floor(Math.random() * GRID_SIZE); 
+        apple.x = Math.floor(Math.random() * GRID_SIZE);
         apple.y = Math.floor(Math.random() * GRID_SIZE);
     }
 
